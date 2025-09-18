@@ -47,7 +47,9 @@ run-client:
 # Arrête le serveur
 stop-server:
 	@echo "-> Arrêt et suppression des conteneurs (via docker compose)..."
-	@docker compose down
+	@docker compose down --rmi all || true
+	# @docker compose down
+	# @docker rm -f pubsub-server
 
 # Force la mise à jour des dépendances en utilisant le pip du venv
 force-update:
