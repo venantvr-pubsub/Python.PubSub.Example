@@ -1,0 +1,23 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  server:
+    image: pubsub-server-image
+    container_name: pubsub-server
+    ports:
+      - "5000:5000"
+
+    # --- Choisissez UNE des deux options ci-dessous ---
+
+    # Option A (recommandée pour le développement local) :
+    # Construit l'image à partir du dossier local du serveur.
+    # Docker Compose va chercher le Dockerfile dans le dossier ../Python.PubSub.Server
+    # build:
+    #   context: ../Python.PubSub.Server
+
+    # Option B (très propre, aucune dépendance locale) :
+    # Construit l'image directement depuis le dépôt Git.
+    # Vous n'avez même pas besoin de cloner le serveur localement !
+    build:
+      context: https://github.com/venantvr/Python.PubSub.Server.git
