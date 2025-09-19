@@ -1,2 +1,2 @@
 # requirements.txt
-git+https://github.com/venantvr/Python.PubSub.Client.git
+git+https://github.com/venantvr-pubsub/Python.PubSub.Client.git

@@ -4,7 +4,7 @@
 services:
   server:
     image: pubsub-server-image
-    container_name: pubsub-server
+    # container_name: pubsub-server
     ports:
       - "5000:5000"
 
@@ -20,4 +20,4 @@ services:
     # Construit l'image directement depuis le dépôt Git.
     # Vous n'avez même pas besoin de cloner le serveur localement !
     build:
-      context: https://github.com/venantvr/Python.PubSub.Server.git
+      context: https://github.com/venantvr-pubsub/Python.PubSub.Server.git

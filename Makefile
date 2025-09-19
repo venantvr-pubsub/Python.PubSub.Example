@@ -9,7 +9,7 @@ DOCKER_CONTAINER_NAME := pubsub-server
 CLIENT_SCRIPT := main.py
 
 # --- Cibles ---
-.PHONY: help run run-server run-client stop-server force-update setup-venv
+.PHONY: help run run-server run-client stop-server force-update setup-venv force-rebuild
 
 help:
 	@echo "Usage: make <target>"
@@ -65,3 +65,11 @@ setup-venv:
 	@echo "-> Installation des dépendances dans le venv..."
 	@$(PIP) install -r requirements.txt
 	@echo "-> Environnement prêt ! Vous pouvez maintenant utiliser 'make run'."
+
+# NOUVELLE CIBLE : Pour forcer la reconstruction sans utiliser le cache
+force-rebuild: stop-server
+	@echo "-> Lancement d'une reconstruction complète SANS CACHE..."
+	@docker compose build --no-cache
+	@echo "-> Lancement du serveur en arrière-plan..."
+	@docker compose up -d
+	@echo "-> Serveur lancé. Vous pouvez maintenant utiliser 'make run-client'."
