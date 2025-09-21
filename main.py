@@ -81,10 +81,12 @@ def process_order(message):
     order_id = message.get("order_id")
     logging.info(f"--- PROCESSING ORDER: {order_id}")
 
+
 def update_inventory(message):
     item_id = message.get("item_id")
     quantity = message.get("quantity")
     logging.info(f"--- UPDATING INVENTORY for item {item_id}: {quantity}")
+
 
 def track_shipping(message):
     tracking_number = message.get("tracking_number")
