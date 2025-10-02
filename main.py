@@ -5,7 +5,7 @@ import time
 import uuid
 
 # noinspection PyPackageRequirements
-from pubsub.pubsub_client import PubSubClient
+from python_pubsub_client import PubSubClient
 
 # Configure un logging plus détaillé pour voir les messages du client et du producteur
 logging.basicConfig(
