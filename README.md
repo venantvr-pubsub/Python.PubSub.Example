@@ -134,3 +134,7 @@ Les contributions sont les bienvenues \! Veuillez suivre ces étapes :
 ## 📄 Licence
 
 Ce projet est sous licence MIT.
+
+## Stack
+
+[![Stack](https://skillicons.dev/icons?i=py,docker,git&theme=dark)](https://skillicons.dev)
